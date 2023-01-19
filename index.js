@@ -24,7 +24,10 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(
-  cors()
+  cors({
+    origin: ["http://127.0.0.1:5173", "https://www.vitalikbrokers.com"],
+    credentials: true,
+  })
 );
 
 //routes
