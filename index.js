@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://www.vitalikbrokers.com/"],
+    origin: ["http://127.0.0.1:5173", "https://vetalikbrokers.cyclic.app/"],
     credentials: true,
   })
 );
