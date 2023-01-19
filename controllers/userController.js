@@ -12,10 +12,10 @@ const generateToken = (id) => {
 
 //REGISTER USER ------------------------------
 const registerUser = asyncHandler(async (req, res) => {
-  const { name, email, password } = req.body;
+  const { username, email, password } = req.body;
 
   //Validation
-  if (!name || !email || !password) {
+  if (!username || !email || !password) {
     res.status(400);
     throw new Error("Please fill all the required fields");
   }
@@ -33,7 +33,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
   //Create new user
   const user = await User.create({
-    name,
+    username,
     email,
     password,
   });
@@ -51,10 +51,10 @@ const registerUser = asyncHandler(async (req, res) => {
   });
 
   if (user) {
-    const { _id, name, email } = user;
+    const { _id, username, email } = user;
     res.status(201).json({
       _id,
-      name,
+      username,
       email,
       token,
     });
