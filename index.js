@@ -24,10 +24,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(
-  cors({
-    origin: ["www.vitalikbrokers.com", "optimum-fe.vercel.app"],
-    credentials: true,
-  })
+  cors()
 );
 
 //routes
